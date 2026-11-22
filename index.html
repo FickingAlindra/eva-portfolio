@@ -470,6 +470,20 @@ footer .av{width:38px;height:38px}
 @media (max-width:980px){.orgs,.cert-grid{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:640px){.xhead{flex-direction:column;gap:8px}.certs li{grid-template-columns:40px minmax(0,1fr);padding:16px}.certs time{grid-column:2}}
 
+
+.btn.dl:hover svg{transform:translateY(3px)}
+.cv-nav{display:flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--white);border-radius:10px;padding:9px 13px;font-size:14px;font-weight:700;color:var(--ink-2);text-decoration:none;transition:border-color .2s,color .2s}
+.cv-nav:hover{border-color:var(--primary);color:var(--primary)}
+.cv-nav svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;transition:transform .25s var(--ease)}
+.cv-nav:hover svg{transform:translateY(2px)}
+.c-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.c-actions .btn{margin-top:0}
+.cbox .btn.btn-ghost-w{background:transparent;color:var(--white);border-color:rgba(255,255,255,.5)}
+.cbox .btn.btn-ghost-w::before{background:rgba(255,255,255,.14)}
+.cbox .btn.btn-ghost-w:hover{border-color:var(--white)}
+.cbox .btn-ghost-w:hover svg{transform:translateY(3px)}
+@media (max-width:640px){.cv-nav span{display:none}.cv-nav{padding:9px 11px}}
+
 /* RESPONSIVE */
 @media (max-width:1100px){
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -559,6 +573,7 @@ footer .av{width:38px;height:38px}
     </ul>
     <div class="right">
       <button class="lang-btn" id="lang" aria-label="Switch to English"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span id="langLabel">EN</span></button>
+      <a class="cv-nav" href="CV_Eva_Febriyani.pdf" download aria-label="Unduh CV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>CV</span></a>
       <a class="btn btn-primary c" href="#kontak" data-i18n="nContact">Hubungi Saya</a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
@@ -577,7 +592,7 @@ footer .av{width:38px;height:38px}
       <p class="intro ld" style="--d:.75s" data-i18n="intro">Fresh graduate Kartografi dan Penginderaan Jauh UGM, berpengalaman mengolah, memvalidasi, dan mengelola data geospasial dengan ArcGIS dan QGIS.</p>
       <div class="actions ld" style="--d:.85s">
         <a class="btn btn-primary mag" href="#proyek"><span data-i18n="ctaWork">Lihat Proyek</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-line" href="#kontak" data-i18n="ctaMail">Hubungi Saya</a>
+        <a class="btn btn-line dl" href="CV_Eva_Febriyani.pdf" download><span data-i18n="cv">Unduh CV</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
       </div>
       <div class="social ld" style="--d:.95s">
         <span data-i18n="find">Temukan saya di</span>
@@ -800,7 +815,7 @@ footer .av{width:38px;height:38px}
   <div class="wrap">
     <div class="cbox rv-s">
       <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
-      <div><h2 data-i18n="cH">Mari Bekerja Sama</h2><p data-i18n="cP">Saya terbuka untuk peran di bidang GIS, penginderaan jauh, dan kartografi. Silakan hubungi saya untuk pertanyaan maupun kolaborasi.</p><a class="btn mag" href="mailto:evaafebry13@gmail.com"><span data-i18n="ctaMail2">Kirim Email Sekarang</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div><h2 data-i18n="cH">Mari Bekerja Sama</h2><p data-i18n="cP">Saya terbuka untuk peran di bidang GIS, penginderaan jauh, dan kartografi. Silakan hubungi saya untuk pertanyaan maupun kolaborasi.</p><div class="c-actions"><a class="btn mag" href="mailto:evaafebry13@gmail.com"><span data-i18n="ctaMail2">Kirim Email Sekarang</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost-w" href="CV_Eva_Febriyani.pdf" download><span data-i18n="cv">Unduh CV</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a></div></div>
       <div class="clist">
         <a href="mailto:evaafebry13@gmail.com"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>Email</small><b>evaafebry13@gmail.com</b></span><svg class="arr" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
         <a href="https://wa.me/6285742966819" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.2c0-.1-.2-.2-.5-.3z"/></svg></span><span><small>WhatsApp</small><b>+62 857 4296 6819</b></span><svg class="arr" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
@@ -926,7 +941,8 @@ const T={id:{},en:{
  ce3:"Google Earth Engine Masterclass",cd3:"Oct 2026",ce4:"Risk Management Based on SNI ISO 31000",cd4:"Oct 2026",
  ce5:"Occupational Health and Safety Management System Based on SNI ISO 45001:2018",cd5:"Oct 2026",
  awK:"Award · Dec 2022",aw1:"Selected as one of more than 100 high-achieving students nationwide based on academic achievement and leadership potential.",
- aw2:"Joined more than 12 mentoring and training sessions on personal growth, professional skills and community service.",aw3:"Collaborated on 5 group projects and workshops."}};
+ aw2:"Joined more than 12 mentoring and training sessions on personal growth, professional skills and community service.",aw3:"Collaborated on 5 group projects and workshops.",
+ cv:"Download CV"}};
 const ROLES={id:["Analisis SIG","Penginderaan Jauh","Kartografi","Fotogrametri UAV","WebGIS"],en:["GIS Analysis","Remote Sensing","Cartography","UAV Photogrammetry","WebGIS"]};
 const P={
  gombong:{tags:{id:["KKL II, Kebumen","2024"],en:["Field Course II, Kebumen","2024"]},t:{id:"Pemetaan Sosial Ekonomi Kelurahan Gombong",en:"Socio-Economic Mapping of Gombong Village"},
