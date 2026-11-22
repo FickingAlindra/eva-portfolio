@@ -430,6 +430,46 @@ footer .av{width:38px;height:38px}
 @media (max-width:640px){.orbit{--os:.55}.globe{width:100px;height:100px;left:-30px;top:-40px}.hire{display:none}}
 @media (prefers-reduced-motion:reduce){.sat{offset-distance:20%}.s3-c{stroke-dashoffset:0}.px{fill:var(--c)}}
 
+
+/* CV additions */
+.thesis{margin-top:20px;padding:16px 18px;border-radius:12px;background:var(--bg-2)}
+.thesis small{display:block;font-size:13px;color:var(--ink-3);margin-bottom:4px}
+.thesis p{font-size:15px;font-weight:600;color:var(--ink);line-height:1.5}
+.edu-ul{list-style:none;display:grid;gap:8px;margin-top:16px}
+.edu-ul li{position:relative;padding-left:18px;font-size:15px;color:var(--ink-2)}
+.edu-ul li::before{content:"";position:absolute;left:2px;top:10px;width:7px;height:7px;border-radius:50%;background:var(--mint)}
+.xhead{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:6px}
+.xhead h3{font-size:21px;margin-bottom:2px}
+.xhead .org{margin-bottom:0}
+.date{flex-shrink:0;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--tint);color:var(--primary);white-space:nowrap}
+.orgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.orgs .card-x{padding:28px}
+.orgs .card-x ul,.ti ul{margin-top:14px;list-style:none;display:grid;gap:8px}
+.orgs li{display:flex;gap:10px;color:var(--ink-2);font-size:15px}
+.orgs li::before{content:"";flex-shrink:0;width:7px;height:7px;margin-top:9px;border-radius:50%;background:var(--mint)}
+.tools i.r{background:var(--rose)}
+.cert-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:start}
+.certs{list-style:none;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--white);overflow:hidden}
+.certs li{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:16px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--line);transition:background-color .2s}
+.certs li:last-child{border-bottom:0}
+.certs li:hover{background:var(--bg-2)}
+.cic{width:44px;height:44px;border-radius:12px;background:var(--tint);display:grid;place-items:center}
+.cic svg{width:22px;height:22px;fill:none;stroke:var(--primary);stroke-width:1.8;stroke-linejoin:round}
+.certs b{display:block;font-size:16px;line-height:1.4}
+.certs span{font-size:14px;color:var(--ink-3)}
+.certs time{font-size:13px;font-weight:700;color:var(--ink-2);white-space:nowrap}
+.award{border-radius:var(--r-lg);padding:32px;background:linear-gradient(160deg,#fff8ea,#fff);border:1px solid #f0e2bf}
+.aw-ic{width:52px;height:52px;border-radius:14px;background:#fbf0d4;display:grid;place-items:center;margin-bottom:18px}
+.aw-ic svg{width:26px;height:26px;fill:none;stroke:#b5892f;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.aw-k{font-size:13px;font-weight:700;color:#9a7426}
+.award h3{font-size:22px;margin:6px 0 2px}
+.aw-r{font-weight:600;color:var(--ink-2);margin-bottom:14px}
+.award ul{list-style:none;display:grid;gap:8px}
+.award li{position:relative;padding-left:18px;font-size:15px;color:var(--ink-2)}
+.award li::before{content:"";position:absolute;left:2px;top:10px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+@media (max-width:980px){.orgs,.cert-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.xhead{flex-direction:column;gap:8px}.certs li{grid-template-columns:40px minmax(0,1fr);padding:16px}.certs time{grid-column:2}}
+
 /* RESPONSIVE */
 @media (max-width:1100px){
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -515,6 +555,7 @@ footer .av{width:38px;height:38px}
       <li><a href="#pengalaman" data-i18n="nExp">Pengalaman</a></li>
       <li><a href="#keahlian" data-i18n="nSkills">Keahlian</a></li>
       <li><a href="#proyek" data-i18n="nWork">Proyek</a></li>
+      <li><a href="#sertifikat" data-i18n="nCert">Sertifikat</a></li>
     </ul>
     <div class="right">
       <button class="lang-btn" id="lang" aria-label="Switch to English"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span id="langLabel">EN</span></button>
@@ -529,11 +570,11 @@ footer .av{width:38px;height:38px}
   <div class="hero-bg" aria-hidden="true"><div class="dots"></div><div class="b1"></div><div class="b2"></div><div class="b3"></div></div>
   <div class="wrap hero-grid">
     <div>
-      <p class="status ld" style="--d:.1s"><i></i><span data-i18n="status">Terbuka untuk kesempatan kerja</span></p>
+      <p class="status ld" style="--d:.1s"><i></i><span data-i18n="status">Fresh graduate, terbuka untuk kesempatan kerja</span></p>
       <h1 aria-label="Eva Febriyani"><span class="w" aria-hidden="true"><span style="--d:.2s">Eva</span></span><span class="w" aria-hidden="true"><span style="--d:.32s">Febriyani</span></span></h1>
       <p class="role ld" style="--d:.55s" data-i18n="role">Geospatial Data Analyst &amp; Remote Sensing</p>
       <p class="typed ld" style="--d:.65s"><span data-i18n="typedLead">Fokus pada</span> <b id="typed">Analisis SIG</b><span class="caret" aria-hidden="true"></span></p>
-      <p class="intro ld" style="--d:.75s" data-i18n="intro">Lulusan Kartografi dan Penginderaan Jauh UGM yang mengolah citra satelit, foto udara, dan data lapangan menjadi peta serta analisis spasial yang siap dipakai.</p>
+      <p class="intro ld" style="--d:.75s" data-i18n="intro">Fresh graduate Kartografi dan Penginderaan Jauh UGM, berpengalaman mengolah, memvalidasi, dan mengelola data geospasial dengan ArcGIS dan QGIS.</p>
       <div class="actions ld" style="--d:.85s">
         <a class="btn btn-primary mag" href="#proyek"><span data-i18n="ctaWork">Lihat Proyek</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn btn-line" href="#kontak" data-i18n="ctaMail">Hubungi Saya</a>
@@ -577,33 +618,36 @@ footer .av{width:38px;height:38px}
   <div class="wrap">
     <div class="about-grid">
       <div>
-        <div class="head" style="margin-bottom:28px"><p class="kicker rv" data-i18n="kAbout">Tentang Saya</p><h2 class="split" data-i18n="aboutH">Analytical Mind, Proactive Attitude, Meaningful Impact</h2></div>
-        <p class="lead rv" data-i18n="aboutLead">Saya menggabungkan ketelitian analitis, rasa ingin tahu, dan inisiatif untuk mengubah data menjadi solusi.</p>
-        <p class="t rv" style="--i:1" data-i18n="about1">Saya lulusan Program Studi S-1 Kartografi dan Penginderaan Jauh, Fakultas Geografi, Universitas Gadjah Mada. Berbekal pengalaman dalam analisis SIG, pemetaan, serta kepemimpinan organisasi, saya terbiasa bekerja secara terstruktur, berkolaborasi lintas tim, dan beradaptasi dengan tantangan baru.</p>
-        <p class="t rv" style="--i:2" data-i18n="about2">Saya siap membawa perspektif geospasial, semangat belajar, dan orientasi pada hasil untuk menciptakan kontribusi nyata bagi perusahaan.</p>
+        <div class="head" style="margin-bottom:28px"><p class="kicker rv" data-i18n="kAbout">Tentang Saya</p><h2 class="split" data-i18n="aboutH">Teliti, Analitis, dan Terorganisasi</h2></div>
+        <p class="lead rv" data-i18n="aboutLead">Fresh graduate Kartografi dan Penginderaan Jauh UGM dengan pengalaman dalam pengolahan, validasi, dan pengelolaan data geospasial.</p>
+        <p class="t rv" style="--i:1" data-i18n="about1">Saya menguasai ArcGIS dan QGIS untuk georeferensi, digitasi, analisis spasial, serta penyusunan peta tematik. Saya juga memahami interpretasi citra satelit dan alur kerja fotogrametri UAV serta LiDAR.</p>
+        <p class="t rv" style="--i:2" data-i18n="about2">Teliti, analitis, dan terorganisasi dalam mengelola data serta menyelesaikan pekerjaan teknis maupun administratif. Tertarik mengembangkan kompetensi GIS untuk mendukung pengelolaan data dan kebutuhan operasional di berbagai sektor.</p>
         <div class="values">
-          <span class="rv-s"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/></svg><b data-i18n="v1" style="font-weight:600">Analisis Terstruktur</b></span>
-          <span class="rv-s" style="--i:1"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 14c3 0 6 1.5 6 4"/></svg><b data-i18n="v2" style="font-weight:600">Kolaborasi Lintas Tim</b></span>
-          <span class="rv-s" style="--i:2"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0114-5.3M20 12a8 8 0 01-14 5.3M18 3v4h-4M6 21v-4h4"/></svg><b data-i18n="v3" style="font-weight:600">Cepat Beradaptasi</b></span>
+          <span class="rv-s"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 0114 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><b style="font-weight:600">Kab. Sleman, DI Yogyakarta</b></span>
+          <span class="rv-s" style="--i:1"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><b data-i18n="v2" style="font-weight:600">Bahasa Inggris B2 (AcEPT UGM)</b></span>
         </div>
       </div>
       <aside class="edu rv-r">
         <h3 data-i18n="eduH">Pendidikan</h3>
         <div class="edu-item">
           <span class="logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span>
-          <div><b data-i18n="eduProg">S-1 Kartografi dan Penginderaan Jauh</b><span data-i18n="eduUni">Fakultas Geografi, Universitas Gadjah Mada</span></div>
+          <div><b>Universitas Gadjah Mada</b><span data-i18n="eduUni">Fakultas Geografi, Kartografi dan Penginderaan Jauh</span></div>
         </div>
         <div class="edu-meta">
-          <div><small data-i18n="eduYearL">Periode</small><strong>2022 – 2026</strong></div>
+          <div><small data-i18n="eduYearL">Periode</small><strong data-i18n="eduYear">Ags 2022 – Okt 2026</strong></div>
           <div><small data-i18n="eduGpaL">IPK</small><strong data-i18n="gpaV">3,59 / 4,00</strong></div>
         </div>
-        <blockquote data-i18n="quote">Dari data spasial menuju pemanfaatan sumber daya yang berkelanjutan.</blockquote>
+        <div class="thesis"><small data-i18n="thesisL">Judul skripsi</small><p data-i18n="thesis">Aplikasi Citra Pleiades Hasil Pan-Sharpening untuk Evaluasi Kinerja Ruas Jalan di Koridor Utama Kawasan Perkotaan Yogyakarta</p></div>
+        <ul class="edu-ul">
+          <li data-i18n="edu1">Akuisisi dan pengolahan data geospasial dengan fotogrametri UAV dan LiDAR melalui kegiatan akademik di Kebumen dan Bali.</li>
+          <li data-i18n="edu2">Analisis geospasial untuk aplikasi sumber daya alam dan pertambangan, termasuk interpretasi citra satelit dan pemetaan tematik.</li>
+        </ul>
       </aside>
     </div>
 
     <div class="counters">
-      <div class="ct rv" ><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></div><b><span data-count="500">500</span>+</b><span data-i18n="c1">data spasial divalidasi saat magang</span></div>
-      <div class="ct rv" style="--i:1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20l5-14 4 9 3-5 4 10z"/></svg></div><b><span data-count="150">150</span>+</b><span data-i18n="c2">fitur batas tambang didigitasi</span></div>
+      <div class="ct rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></div><b><span data-count="500">500</span>+</b><span data-i18n="c1">data spasial pertambangan divalidasi</span></div>
+      <div class="ct rv" style="--i:1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20l5-14 4 9 3-5 4 10z"/></svg></div><b><span data-count="150">150</span>+</b><span data-i18n="c2">fitur spasial didigitasi</span></div>
       <div class="ct rv" style="--i:2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg></div><b><span data-count="10">10</span></b><span data-i18n="c3">peta tematik untuk DPUP-ESDM DIY</span></div>
       <div class="ct rv" style="--i:3"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M16 6h5M16 10h5M18 14h3"/></svg></div><b><span data-count="30">30</span>+</b><span data-i18n="c4">mahasiswa didampingi per semester</span></div>
     </div>
@@ -612,45 +656,60 @@ footer .av{width:38px;height:38px}
 
 <section class="sec alt" id="pengalaman">
   <div class="wrap">
-    <div class="head"><p class="kicker rv" data-i18n="kExp">Pengalaman</p><h2 class="split" data-i18n="expH">Pengalaman Kerja dan Organisasi</h2></div>
+    <div class="head"><p class="kicker rv" data-i18n="kExp">Pengalaman</p><h2 class="split" data-i18n="expH">Pengalaman Kerja</h2></div>
     <div class="tl" id="tl">
       <span class="tl-fill" id="tlFill"></span>
       <div class="ti">
-        <span class="dot"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></span>
-        <article class="card-x rv">
+        <span class="dot"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></span>
+        <article class="card-x">
+          <div class="xhead"><div><h3>Data and Marketing Administration</h3><p class="org">CV Bumi Edukasi Kreatif</p></div><span class="date" data-i18n="d1">Des 2025 – Feb 2026</span></div>
+          <ul>
+            <li data-i18n="w1a">Mengelola dan memperbarui basis data produk dan pemasaran dengan Microsoft Excel dan Google Sheets dengan kelengkapan data 100%, sekaligus meningkatkan keterlacakan data untuk pelaporan internal.</li>
+            <li data-i18n="w1b">Memanfaatkan penyaringan data, lookup, dan formula untuk menyusun laporan berkala, meningkatkan akurasi dan ketepatan waktu pelaporan sebesar 20%.</li>
+            <li data-i18n="w1c">Menstandarkan format spreadsheet dan alur dokumentasi sehingga kesalahan entri data manual berkurang sekitar 15%.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="ti">
+        <span class="dot"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg></span>
+        <article class="card-x">
           <div class="feat-x">
             <div>
-              <span class="type" data-i18n="j1when">Magang</span>
-              <h3 data-i18n="j1h">GIS Analyst Intern</h3>
-              <p class="org">Dinas PUP-ESDM Daerah Istimewa Yogyakarta</p>
-              <p data-i18n="j1p">Menyusun Peta Wilayah Pertambangan DIY 2026: sebaran WUP, WPR, dan WPN berdasarkan Kepmen ESDM 59.K/MB.01/MEM.B/2026 menggunakan ArcGIS dan QGIS.</p>
+              <div class="xhead"><div><h3>GIS Analyst Intern</h3><p class="org">DPUP-ESDM DIY</p></div><span class="date" data-i18n="d2">Ags 2025 – Okt 2025</span></div>
               <ul>
-                <li data-i18n="j1l1">Memvalidasi lebih dari 500 data spasial</li>
-                <li data-i18n="j1l2">Mendigitasi lebih dari 150 fitur batas tambang</li>
-                <li data-i18n="j1l3">Menghasilkan 10 peta tematik</li>
+                <li data-i18n="w2a">Mengolah dan memvalidasi lebih dari 500 data spasial wilayah pertambangan dan Izin Usaha Pertambangan (IUP) untuk Peta Wilayah Pertambangan DIY 2026 dengan ArcGIS dan QGIS.</li>
+                <li data-i18n="w2b">Melakukan georeferensi, digitasi, dan visualisasi lebih dari 150 fitur spasial pertambangan untuk meningkatkan ketelitian batas wilayah.</li>
+                <li data-i18n="w2c">Menghasilkan 10 peta tematik distribusi wilayah pertambangan, potensi mineral, dan pola spasial untuk mendukung perencanaan pertambangan daerah.</li>
               </ul>
               <div class="facts"><span data-i18n="f1"><b>42.942 ha</b> total Wilayah Pertambangan</span><span data-i18n="f2"><b>13,48%</b> dari luas daratan DIY</span></div>
             </div>
-            <button class="job-fig zoomable rv-r" style="--i:2" data-cap="Peta Wilayah Pertambangan DIY 2026" aria-label="Perbesar peta"><img src="img/esdm-wp-diy.jpg" alt="Peta Wilayah Pertambangan DIY Tahun 2026" loading="lazy"><span class="zoom-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5M11 8v6M8 11h6"/></svg></span></button>
+            <button class="job-fig zoomable" data-cap="Peta Wilayah Pertambangan DIY 2026" aria-label="Perbesar peta"><img src="img/esdm-wp-diy.jpg" alt="Peta Wilayah Pertambangan DIY Tahun 2026" loading="lazy"><span class="zoom-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5M11 8v6M8 11h6"/></svg></span></button>
           </div>
         </article>
       </div>
       <div class="ti">
         <span class="dot"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span>
-        <article class="card-x rv"><span class="type" data-i18n="j2when">Asisten Praktikum</span><h3 data-i18n="j2h">Asisten Praktikum Laboratorium SIG</h3><p class="org" data-i18n="j2org">Fakultas Geografi, Universitas Gadjah Mada</p><p data-i18n="j2p">Mendampingi lebih dari 30 mahasiswa setiap semester dalam praktikum Sistem Informasi Geografis.</p></article>
+        <article class="card-x">
+          <div class="xhead"><div><h3 data-i18n="w3h">Asisten Laboratorium</h3><p class="org" data-i18n="w3o">Departemen Sains Informasi Geografi UGM</p></div><span class="date" data-i18n="d3">Sep 2024 – Jun 2025</span></div>
+          <ul>
+            <li data-i18n="w3a">Mendampingi lebih dari 30 mahasiswa setiap semester dalam praktikum SIG.</li>
+            <li data-i18n="w3b">Memberikan pendampingan teknis penggunaan QGIS, ArcGIS, dan ENVI untuk mendukung ketepatan hasil analisis mahasiswa.</li>
+            <li data-i18n="w3c">Berkolaborasi dengan 3 dosen dalam penyusunan materi dan pelaksanaan lebih dari 10 sesi praktikum, dengan ketepatan waktu penyelesaian 95%.</li>
+          </ul>
+        </article>
       </div>
-      <div class="ti">
-        <span class="dot"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.6-7-11a7 7 0 0114 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-        <article class="card-x rv"><span class="type" data-i18n="j3when">Kerja Lapangan</span><h3 data-i18n="o4h">Kuliah Kerja Lapangan</h3><p class="org" data-i18n="j3org">Kebumen (2024) dan Bali (2025)</p><p data-i18n="o4p">Akuisisi data lapangan, termasuk fotogrametri UAV dan LiDAR, untuk kajian sosial ekonomi dan perkotaan.</p></article>
-      </div>
-      <div class="ti">
-        <span class="dot"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 14c3 0 6 1.5 6 4"/></svg></span>
-        <div class="org-grid">
-          <article class="card-x rv"><span class="type" data-i18n="orgT">Organisasi</span><h4 data-i18n="o1h">Ketua Departemen Sosial Masyarakat, BEM Fakultas</h4><p data-i18n="o1p">Memimpin program Donor Darah, Qurban with Geography, Desa Binaan, dan kegiatan sosial masyarakat lainnya.</p></article>
-          <article class="card-x rv" style="--i:1"><span class="type" data-i18n="orgT">Organisasi</span><h4 data-i18n="o2h">Koordinator Divisi Humas, Pionir Geospace UGM</h4><p data-i18n="o2p">Lebih dari 30 konten kreatif; engagement media sosial naik 30%.</p></article>
-          <article class="card-x rv" style="--i:2;grid-column:1/-1"><span class="type" data-i18n="orgT">Organisasi</span><h4 data-i18n="o3h">Staf Departemen Sosial Masyarakat, HMSaIG</h4><p data-i18n="o3p">Penanaman mangrove bersama lebih dari 50 relawan dan workshop untuk lebih dari 15 petani di Desa Ngadirejo, Kaligesing, Purworejo.</p></article>
-        </div>
-      </div>
+    </div>
+
+    <div class="head" style="margin:96px 0 40px"><p class="kicker in" data-i18n="kOrg">Organisasi dan Relawan</p><h2 data-i18n="orgH">Pengalaman Organisasi</h2></div>
+    <div class="orgs">
+      <article class="card-x"><div class="xhead"><div><h3 data-i18n="o1h">Kepala Kementerian Sosial Masyarakat</h3><p class="org">BEM Fakultas Geografi UGM</p></div><span class="date" data-i18n="od1">Mar 2023 – Nov 2024</span></div>
+        <ul><li data-i18n="o1a">Mengorganisasi donor darah tingkat fakultas bersama PMI dengan lebih dari 50 pendonor.</li><li data-i18n="o1b">Mengoordinasikan pengumpulan kontribusi dari lebih dari 10 sivitas akademika dan penyaluran daging kurban kepada lebih dari 100 penerima manfaat.</li><li data-i18n="o1c">Mengembangkan program sosial yang meningkatkan partisipasi relawan 30% dibanding tahun sebelumnya.</li></ul></article>
+      <article class="card-x"><div class="xhead"><div><h3 data-i18n="o2h">Koordinator Divisi Hubungan Masyarakat</h3><p class="org">Pionir Geospace UGM</p></div><span class="date" data-i18n="od2">Ags 2023 – Ags 2024</span></div>
+        <ul><li data-i18n="o2a">Menjadi penghubung utama bagi lebih dari 50 narasumber dalam kegiatan orientasi.</li><li data-i18n="o2b">Memproduksi lebih dari 30 konten kreatif: poster, video, dan teks publikasi media sosial.</li><li data-i18n="o2c">Meningkatkan keterlibatan audiens media sosial 30% melalui identitas visual dan perencanaan publikasi yang konsisten.</li></ul></article>
+      <article class="card-x"><div class="xhead"><div><h3 data-i18n="o3h">Staf Departemen Sosial Masyarakat</h3><p class="org" data-i18n="o3o">Himpunan Mahasiswa Sains Informasi Geografi UGM</p></div><span class="date" data-i18n="od3">Mei 2023 – Mei 2025</span></div>
+        <ul><li data-i18n="o3a">Menyelenggarakan lebih dari 5 kegiatan pengabdian untuk literasi geografi dan kesadaran lingkungan di sekolah.</li><li data-i18n="o3b">Mengoordinasikan penanaman mangrove bersama lebih dari 50 relawan.</li><li data-i18n="o3c">Menginisiasi lokakarya pertanian berbasis informasi geospasial bagi lebih dari 15 petani di Desa Ngadirejo, Purworejo.</li></ul></article>
+      <article class="card-x"><div class="xhead"><div><h3>Equipment Division Intern</h3><p class="org">Yayasan Senyum Kita</p></div><span class="date" data-i18n="od4">Mar 2023 – Apr 2023</span></div>
+        <ul><li data-i18n="o4a">Mendukung logistik program Senyum Ceria Ramadan yang menjangkau lebih dari 300 anak yatim, masyarakat prasejahtera, dan penyandang disabilitas.</li><li data-i18n="o4b">Mengoordinasikan pengadaan dan distribusi perlengkapan senilai Rp50 juta.</li><li data-i18n="o4c">Bersama 20 relawan mengelola inventaris lebih dari 500 barang donasi.</li></ul></article>
     </div>
   </div>
 </section>
@@ -659,9 +718,9 @@ footer .av{width:38px;height:38px}
   <div class="wrap">
     <div class="head center"><p class="kicker rv" data-i18n="kSkills">Keahlian</p><h2 class="split" data-i18n="skillsH">Keahlian Geospasial</h2><p class="rv" data-i18n="skillsP">Dari pengambilan data di lapangan sampai peta yang siap dipakai.</p></div>
     <div class="skills">
-      <div class="skill rv"><span class="no">01</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l3 3-3 3-3-3z"/><path d="M4 11h4M16 11h4M12 13v8M8 21h8"/></svg></div><h3 data-i18n="s1h">Akuisisi Data</h3><p data-i18n="s1p">Fotogrametri UAV dan LiDAR, dengan praktik lapangan di Kebumen dan Bali.</p><div class="tags"><span>UAV</span><span>LiDAR</span><span>DSM</span><span data-i18n="tOrtho">Ortofoto</span></div></div>
-      <div class="skill rv" style="--i:1"><span class="no">02</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg></div><h3 data-i18n="s2h">Analisis SIG</h3><p data-i18n="s2p">Georeferensi, digitasi, validasi data spasial, analisis jaringan dan overlay, hingga produksi peta tematik.</p><div class="tags"><span>Overlay</span><span>Network</span><span data-i18n="tDig">Digitasi</span><span>Layout</span></div></div>
-      <div class="skill rv" style="--i:2"><span class="no">03</span><div class="ic"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M3 12h6M15 12h6M12 3v6M12 15v6"/></svg></div><h3 data-i18n="s3h">Penginderaan Jauh</h3><p data-i18n="s3p">Interpretasi citra satelit optik dan radar, serta pengolahan data di Google Earth Engine.</p><div class="tags"><span>Sentinel-1</span><span>PlanetScope</span><span>GEE</span><span>InSAR</span></div></div>
+      <div class="skill rv"><span class="no">01</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l3 3-3 3-3-3z"/><path d="M4 11h4M16 11h4M12 13v8M8 21h8"/></svg></div><h3 data-i18n="s1h">Akuisisi Data</h3><p data-i18n="s1p">Fotogrametri UAV, LiDAR, dan survei topografi melalui kegiatan lapangan di Kebumen dan Bali.</p><div class="tags"><span>UAV</span><span>LiDAR</span><span>Topographic Survey</span></div></div>
+      <div class="skill rv" style="--i:1"><span class="no">02</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg></div><h3 data-i18n="s2h">Analisis SIG</h3><p data-i18n="s2p">Georeferensi, digitasi, validasi data spasial, analisis spasial, hingga penyusunan peta tematik dengan ArcGIS dan QGIS.</p><div class="tags"><span>ArcGIS</span><span>QGIS</span><span>Mapping</span><span>Data Analysis</span></div></div>
+      <div class="skill rv" style="--i:2"><span class="no">03</span><div class="ic"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M3 12h6M15 12h6M12 3v6M12 15v6"/></svg></div><h3 data-i18n="s3h">Penginderaan Jauh</h3><p data-i18n="s3p">Interpretasi citra satelit optik dan radar, termasuk citra Pleiades pan-sharpening untuk kajian perkotaan.</p><div class="tags"><span>Pleiades</span><span>Sentinel-1</span><span>PlanetScope</span><span>Urban Studies</span></div></div>
     </div>
 <div class="flow">
       <div class="flow-card rv"><div class="scene"><svg viewBox="0 0 320 200" aria-hidden="true">
@@ -685,7 +744,8 @@ footer .av{width:38px;height:38px}
         <rect x="238" y="150" width="44" height="5" fill="none" stroke="#0f4c55"/><rect x="238" y="150" width="11" height="5" fill="#0f4c55"/><rect x="260" y="150" width="11" height="5" fill="#0f4c55"/>
       </svg></div><div class="txt"><span class="step" data-i18n="fl3s">Kartografi</span><h3 data-i18n="fl3h">Menyajikan Peta Siap Pakai</h3><p data-i18n="fl3p">Peta tematik yang akurat, lengkap dengan legenda, skala, dan tata letak yang jelas.</p></div></div>
     </div>
-    <div class="tools"><b data-i18n="toolsL">Tools:</b><span class="rv-s"><i></i>QGIS</span><span class="rv-s" style="--i:1"><i></i>ArcGIS Pro</span><span class="rv-s" style="--i:2"><i></i>ENVI</span><span class="rv-s" style="--i:3"><i></i>SNAP</span><span class="rv-s" style="--i:4"><i></i>Global Mapper</span><span class="rv-s" style="--i:5"><i></i>Google Earth Engine</span></div>
+    <div class="tools"><b data-i18n="toolsL">Teknis:</b><span><i></i>ArcGIS</span><span><i></i>QGIS</span><span><i></i>ENVI</span><span><i></i>Google Earth Engine</span><span><i></i>Python (XCast)</span><span><i></i>Microsoft Office</span><span><i></i>Google Sheets</span></div>
+    <div class="tools" style="margin-top:14px"><b data-i18n="softL">Non-teknis:</b><span><i class="r"></i>Leadership</span><span><i class="r"></i>Teamwork</span><span><i class="r"></i>Public Speaking</span><span><i class="r"></i>Copywriting</span></div>
   </div>
 </section>
 
@@ -710,13 +770,40 @@ footer .av{width:38px;height:38px}
   </div>
 </section>
 
-<section class="sec contact" id="kontak" style="padding-top:120px">
+<section class="sec" id="sertifikat">
+  <div class="wrap">
+    <div class="head"><p class="kicker in" data-i18n="kCert">Pencapaian</p><h2 data-i18n="certH">Sertifikat dan Penghargaan</h2></div>
+    <div class="cert-grid">
+      <ul class="certs">
+        <li><span class="cic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg></span><div><b data-i18n="ce1">Sertifikat Kemampuan Bahasa Inggris Tingkat B2</b><span>AcEPT UGM</span></div><time data-i18n="cd1">Jun 2026</time></li>
+        <li><span class="cic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg></span><div><b data-i18n="ce2">Pelatihan Forecast Iklim Masa Depan Menggunakan Python XCast</b><span>Geoaccess</span></div><time data-i18n="cd2">Okt 2026</time></li>
+        <li><span class="cic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg></span><div><b data-i18n="ce3">Pelatihan Masterclass Google Earth Engine</b><span>Pakarify</span></div><time data-i18n="cd3">Okt 2026</time></li>
+        <li><span class="cic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg></span><div><b data-i18n="ce4">Manajemen Risiko Berbasis SNI ISO 31000</b><span>Badan Standardisasi Nasional</span></div><time data-i18n="cd4">Okt 2026</time></li>
+        <li><span class="cic"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg></span><div><b data-i18n="ce5">Sistem Manajemen K3 Berbasis SNI ISO 45001:2018</b><span>Badan Standardisasi Nasional</span></div><time data-i18n="cd5">Okt 2026</time></li>
+      </ul>
+      <article class="award">
+        <span class="aw-ic"><svg viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 01-10 0z"/><path d="M7 6H4v1a3 3 0 003 3M17 6h3v1a3 3 0 01-3 3"/></svg></span>
+        <p class="aw-k" data-i18n="awK">Penghargaan · Des 2022</p>
+        <h3>SMART Scholarship Bank BRI</h3>
+        <p class="aw-r">Awardee</p>
+        <ul>
+          <li data-i18n="aw1">Terpilih sebagai salah satu dari lebih dari 100 mahasiswa berprestasi se-Indonesia berdasarkan prestasi akademik dan potensi kepemimpinan.</li>
+          <li data-i18n="aw2">Mengikuti lebih dari 12 sesi mentoring dan pelatihan pengembangan diri, keterampilan profesional, dan pengabdian masyarakat.</li>
+          <li data-i18n="aw3">Berkolaborasi dalam 5 proyek kelompok dan lokakarya.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="kontak" style="padding-top:0">
   <div class="wrap">
     <div class="cbox rv-s">
       <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
       <div><h2 data-i18n="cH">Mari Bekerja Sama</h2><p data-i18n="cP">Saya terbuka untuk peran di bidang GIS, penginderaan jauh, dan kartografi. Silakan hubungi saya untuk pertanyaan maupun kolaborasi.</p><a class="btn mag" href="mailto:evaafebry13@gmail.com"><span data-i18n="ctaMail2">Kirim Email Sekarang</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       <div class="clist">
         <a href="mailto:evaafebry13@gmail.com"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>Email</small><b>evaafebry13@gmail.com</b></span><svg class="arr" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+        <a href="https://wa.me/6285742966819" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.2c0-.1-.2-.2-.5-.3z"/></svg></span><span><small>WhatsApp</small><b>+62 857 4296 6819</b></span><svg class="arr" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
         <a href="https://www.linkedin.com/in/evafebriyani" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11.02 5 2.5 2.5 0 01-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></span><span><small>LinkedIn</small><b>linkedin.com/in/evafebriyani</b></span><svg class="arr" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
         <a href="https://www.instagram.com/evaafebry" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span><span><small>Instagram</small><b>@evaafebry</b></span><svg class="arr" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
       </div>
@@ -745,7 +832,7 @@ footer .av{width:38px;height:38px}
           <g class="av-hand"><path d="M50 60l1-9" stroke="#1d3a40" stroke-width="5" stroke-linecap="round"/><circle cx="51.2" cy="49.5" r="3.6" fill="#f2c9ab"/></g>
         </g>
       </svg><span>© <span id="yr">2026</span> Eva Febriyani</span></div>
-    <nav><a href="#tentang" data-i18n="nAbout">Tentang</a><a href="#pengalaman" data-i18n="nExp">Pengalaman</a><a href="#keahlian" data-i18n="nSkills">Keahlian</a><a href="#proyek" data-i18n="nWork">Proyek</a><a href="#kontak" data-i18n="nContact">Hubungi Saya</a></nav>
+    <nav><a href="#tentang" data-i18n="nAbout">Tentang</a><a href="#pengalaman" data-i18n="nExp">Pengalaman</a><a href="#keahlian" data-i18n="nSkills">Keahlian</a><a href="#proyek" data-i18n="nWork">Proyek</a><a href="#sertifikat" data-i18n="nCert">Sertifikat</a><a href="#kontak" data-i18n="nContact">Hubungi Saya</a></nav>
   </div>
 </footer>
 
@@ -761,7 +848,7 @@ footer .av{width:38px;height:38px}
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const fine=matchMedia('(pointer:fine)').matches;
 const T={id:{},en:{
- brandSub:"Geospatial Data Analyst",nAbout:"About",nExp:"Experience",nSkills:"Skills",nWork:"Projects",nContact:"Contact Me",
+  brandSub:"Geospatial Data Analyst",nAbout:"About",nExp:"Experience",nSkills:"Skills",nWork:"Projects",nContact:"Contact Me",
  status:"Open to work",role:"Geospatial Data Analyst &amp; Remote Sensing",typedLead:"Focused on",
  intro:"Cartography and Remote Sensing graduate from Universitas Gadjah Mada who turns satellite imagery, aerial photos and field data into maps and spatial analysis that are ready to use.",
  ctaWork:"View Projects",ctaMail:"Contact Me",find:"Find me on",scroll:"Scroll",
@@ -797,7 +884,49 @@ const T={id:{},en:{
  p5t:"Radar Remote Sensing",p5h:"Land Deformation in Hokkaido with Sentinel-1A",p5s:"Land deformation map from two Sentinel-1A scenes, at 1:900,000.",
  p4t:"Cartography",p4h:"A Range of Thematic Maps",p4s:"Topographic, population density, slope and road network maps.",
  p6h:"Yogyakarta Tourism WebGIS",p6s:"An interactive map of tourist sites with an admin page for the data.",
- cH:"Let’s Work Together",cP:"I am open to roles in GIS, remote sensing and cartography. Feel free to reach out with questions or collaboration ideas.",ctaMail2:"Send an Email Now"}};
+ cH:"Let’s Work Together",cP:"I am open to roles in GIS, remote sensing and cartography. Feel free to reach out with questions or collaboration ideas.",ctaMail2:"Send an Email Now",
+ status:"Fresh graduate, open to work",
+ intro:"Cartography and Remote Sensing fresh graduate from Universitas Gadjah Mada, experienced in processing, validating and managing geospatial data with ArcGIS and QGIS.",
+ aboutH:"Careful, Analytical and Organised",
+ aboutLead:"Cartography and Remote Sensing fresh graduate from UGM with experience in processing, validating and managing geospatial data.",
+ about1:"I am proficient in ArcGIS and QGIS for georeferencing, digitising, spatial analysis and thematic map production. I also understand satellite image interpretation and UAV photogrammetry and LiDAR workflows.",
+ about2:"Careful, analytical and organised in managing data and completing both technical and administrative work. Keen to grow my GIS skills to support data management and operational needs across sectors.",
+ v2:"English B2 (AcEPT UGM)",
+ eduUni:"Faculty of Geography, Cartography and Remote Sensing",eduYear:"Aug 2022 – Oct 2026",thesisL:"Thesis",
+ thesis:"Application of Pan-Sharpened Pleiades Imagery to Evaluate Road Segment Performance in the Main Corridors of Yogyakarta Urban Area",
+ edu1:"Geospatial data acquisition and processing with UAV photogrammetry and LiDAR during academic fieldwork in Kebumen and Bali.",
+ edu2:"Geospatial analysis for natural resources and mining, including satellite image interpretation and thematic mapping.",
+ c1:"mining spatial records validated",c2:"spatial features digitised",
+ expH:"Work Experience",
+ d1:"Dec 2025 – Feb 2026",w1a:"Managed and updated product and marketing databases in Microsoft Excel and Google Sheets with 100% data completeness, improving traceability for internal reporting.",
+ w1b:"Used filtering, lookups and formulas to build periodic reports, improving reporting accuracy and timeliness by 20%.",
+ w1c:"Standardised spreadsheet formats and documentation flows, cutting manual data entry errors by around 15%.",
+ d2:"Aug 2025 – Oct 2025",w2a:"Processed and validated over 500 spatial records on mining areas and mining business permits (IUP) for the Yogyakarta Mining Area Map 2026 using ArcGIS and QGIS.",
+ w2b:"Georeferenced, digitised and visualised over 150 mining-related spatial features to improve the accuracy of mining area boundaries.",
+ w2c:"Produced 10 thematic maps of mining area distribution, mineral potential and spatial patterns to support regional mining planning.",
+ w3h:"Laboratory Assistant",w3o:"Department of Geographic Information Science, UGM",d3:"Sep 2024 – Jun 2025",
+ w3a:"Supported more than 30 students every semester in GIS lab classes.",w3b:"Provided technical guidance on QGIS, ArcGIS and ENVI to help students complete accurate analyses.",
+ w3c:"Worked with 3 lecturers to prepare materials and run more than 10 lab sessions, with 95% on-time completion.",
+ kOrg:"Organisations and Volunteering",orgH:"Organisational Experience",
+ o1h:"Head of Social Affairs Ministry",od1:"Mar 2023 – Nov 2024",o1a:"Organised a faculty blood drive with the Indonesian Red Cross (PMI) involving more than 50 donors.",
+ o1b:"Coordinated contributions from more than 10 faculty members and distributed qurban meat to more than 100 beneficiaries.",o1c:"Developed social programmes that increased volunteer participation by 30% year on year.",
+ o2h:"Public Relations Division Coordinator",od2:"Aug 2023 – Aug 2024",o2a:"Main liaison for more than 50 speakers during the orientation programme.",
+ o2b:"Produced over 30 pieces of creative content: posters, videos and social media copy.",o2c:"Grew social media engagement by 30% through a consistent visual identity and publication planning.",
+ o3h:"Social Affairs Department Staff",o3o:"Geographic Information Science Student Association, UGM",od3:"May 2023 – May 2025",
+ o3a:"Ran more than 5 outreach activities on geography literacy and environmental awareness in schools.",o3b:"Coordinated mangrove planting with more than 50 volunteers.",
+ o3c:"Initiated a geospatial-based farming workshop for more than 15 farmers in Ngadirejo Village, Purworejo.",
+ od4:"Mar 2023 – Apr 2023",o4a:"Supported logistics for the Senyum Ceria Ramadan programme, reaching more than 300 orphans, low-income families and people with disabilities.",
+ o4b:"Coordinated procurement and distribution of equipment worth IDR 50 million.",o4c:"Managed an inventory of more than 500 donated items with 20 volunteers.",
+ s1p:"UAV photogrammetry, LiDAR and topographic surveys during fieldwork in Kebumen and Bali.",
+ s2p:"Georeferencing, digitising, spatial data validation and spatial analysis through to thematic maps in ArcGIS and QGIS.",
+ s3p:"Interpreting optical and radar satellite imagery, including pan-sharpened Pleiades imagery for urban studies.",
+ toolsL:"Technical:",softL:"Soft skills:",
+ nCert:"Certificates",kCert:"Achievements",certH:"Certificates and Awards",
+ ce1:"English Proficiency Certificate, Level B2",cd1:"Jun 2026",ce2:"Future Climate Forecasting with Python XCast",cd2:"Oct 2026",
+ ce3:"Google Earth Engine Masterclass",cd3:"Oct 2026",ce4:"Risk Management Based on SNI ISO 31000",cd4:"Oct 2026",
+ ce5:"Occupational Health and Safety Management System Based on SNI ISO 45001:2018",cd5:"Oct 2026",
+ awK:"Award · Dec 2022",aw1:"Selected as one of more than 100 high-achieving students nationwide based on academic achievement and leadership potential.",
+ aw2:"Joined more than 12 mentoring and training sessions on personal growth, professional skills and community service.",aw3:"Collaborated on 5 group projects and workshops."}};
 const ROLES={id:["Analisis SIG","Penginderaan Jauh","Kartografi","Fotogrametri UAV","WebGIS"],en:["GIS Analysis","Remote Sensing","Cartography","UAV Photogrammetry","WebGIS"]};
 const P={
  gombong:{tags:{id:["KKL II, Kebumen","2024"],en:["Field Course II, Kebumen","2024"]},t:{id:"Pemetaan Sosial Ekonomi Kelurahan Gombong",en:"Socio-Economic Mapping of Gombong Village"},
@@ -879,7 +1008,7 @@ const navA=[...links.querySelectorAll('a')],blob=document.getElementById('blob')
 function moveBlob(){const a=links.querySelector('a.on');if(!a||innerWidth<=980){blob.style.opacity=0;return}
   const lr=links.getBoundingClientRect(),r=a.getBoundingClientRect();blob.style.opacity=1;blob.style.width=r.width+'px';blob.style.transform=`translateX(${r.left-lr.left}px)`}
 const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){navA.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id));moveBlob()}}),{rootMargin:'-45% 0px -50% 0px'});
-['tentang','pengalaman','keahlian','proyek'].forEach(id=>so.observe(document.getElementById(id)));
+['tentang','pengalaman','keahlian','proyek','sertifikat'].forEach(id=>so.observe(document.getElementById(id)));
 new IntersectionObserver(es=>{if(es[0].isIntersecting){navA.forEach(a=>a.classList.remove('on'));moveBlob()}},{rootMargin:'-45% 0px -50% 0px'}).observe(document.querySelector('.hero'));
 addEventListener('resize',moveBlob);
 
