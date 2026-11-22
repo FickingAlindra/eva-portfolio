@@ -140,13 +140,16 @@ header.nav.hide{transform:translateY(-100%)}
 @keyframes wheel{0%{opacity:0;transform:translateY(-4px)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
 
 /* MARQUEE */
-.marquee{position:relative;background:var(--primary);color:var(--white);padding:22px 0;overflow:hidden;transform:skewY(-1.5deg);margin-top:-14px;z-index:2}
-.marquee .row{display:flex;width:max-content;animation:mq 38s linear infinite;transform:skewY(1.5deg)}
+.marquee{position:relative;background:var(--primary);color:var(--white);padding:20px 0;overflow:hidden;z-index:2}
+.marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:120px;z-index:1;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--primary),transparent)}
+.marquee::after{right:0;background:linear-gradient(270deg,var(--primary),transparent)}
+.marquee .row{display:flex;width:max-content;animation:mq 38s linear infinite}
 .marquee:hover .row{animation-play-state:paused}
 .marquee ul{display:flex;list-style:none;gap:48px;padding-right:48px;align-items:center}
 .marquee li{display:flex;align-items:center;gap:48px;font-size:22px;font-weight:700;letter-spacing:-0.01em;white-space:nowrap}
 .marquee li::after{content:"";width:9px;height:9px;transform:rotate(45deg);background:var(--mint)}
-@keyframes mq{to{transform:translateX(-50%) skewY(1.5deg)}}
+@keyframes mq{to{transform:translateX(-50%)}}
 
 /* SECTIONS */
 .sec{padding:120px 0;position:relative}
