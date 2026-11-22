@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eva Febriyani | Geospatial Data Analyst</title>
+<meta name="description" content="Portofolio Eva Febriyani, Geospatial Data Analyst dan Remote Sensing, lulusan Kartografi dan Penginderaan Jauh UGM.">
+<meta property="og:title" content="Eva Febriyani | Geospatial Data Analyst">
+<meta property="og:description" content="Dari data spasial menuju pemanfaatan sumber daya yang berkelanjutan.">
+<meta property="og:image" content="img/eva.jpg">
+<meta name="theme-color" content="#0f4c55">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --bg-2:#f2f6f6;
+  --ink:#122a2f;
+  --ink-2:#4a5d62;
+  --ink-3:#7a8b8f;
+  --line:#e1e8e9;
+  --primary:#0f4c55;
+  --primary-2:#0a3940;
+  --tint:#e3efee;
+  --mint:#8fd1c4;
+  --rose:#c9858c;
+  --rose-tint:#f6e9ea;
+  --white:#ffffff;
+  --scrim:rgba(10,30,34,.86);
+  --shadow:0 1px 2px rgba(18,42,47,.06),0 12px 32px -12px rgba(18,42,47,.18);
+  --f:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  --r:14px; --r-lg:22px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --wrap:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--f);font-size:17px;line-height:1.65;color:var(--ink);background:var(--bg);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+h1,h2,h3{line-height:1.12;letter-spacing:-0.02em;font-weight:700;text-wrap:balance}
+p{text-wrap:pretty}
+.wrap{width:min(var(--wrap),100% - 48px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px;border-radius:6px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:16px;padding:14px 24px;border-radius:10px;text-decoration:none;border:1.5px solid transparent;transition:background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease)}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;transition:transform .2s var(--ease)}
+.btn-primary{background:var(--primary);color:var(--white)}
+.btn-primary:hover{background:var(--primary-2)}
+.btn-primary:hover svg{transform:translateX(3px)}
+.btn-line{border-color:var(--line);color:var(--ink);background:var(--white)}
+.btn-line:hover{border-color:var(--primary);color:var(--primary)}
+.btn:active{transform:scale(.98)}
+
+/* NAV */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .3s var(--ease)}
+header.nav.line{border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:40px;height:40px;flex-shrink:0}
+.brand b{display:block;font-size:17px;letter-spacing:-0.01em;line-height:1.2;white-space:nowrap}
+.brand small{display:block;font-size:13px;color:var(--ink-3);line-height:1.2}
+.links{display:flex;align-items:center;gap:4px;list-style:none}
+.links a{display:block;text-decoration:none;font-size:15px;font-weight:600;color:var(--ink-2);padding:8px 14px;border-radius:8px;transition:color .2s var(--ease),background-color .2s var(--ease)}
+.links a:hover,.links a.on{color:var(--primary);background:var(--tint)}
+.right{display:flex;align-items:center;gap:8px}
+.lang-btn{display:flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--white);border-radius:8px;padding:8px 12px;font-size:14px;font-weight:600;color:var(--ink-2);transition:border-color .2s var(--ease),color .2s var(--ease)}
+.lang-btn:hover{border-color:var(--primary);color:var(--primary)}
+.lang-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
+.nav .btn{padding:10px 18px;font-size:15px}
+.burger{display:none;width:42px;height:42px;border:1.5px solid var(--line);background:var(--white);border-radius:8px;place-items:center}
+.burger svg{width:20px;height:20px;stroke:var(--ink);stroke-width:2;fill:none}
+
+/* HERO */
+.hero{padding:72px 0 96px;position:relative}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:64px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--primary);background:var(--tint);padding:6px 14px 6px 10px;border-radius:999px;margin-bottom:24px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 4px rgba(15,76,85,.15)}
+.hero h1{font-size:clamp(44px,6.4vw,76px);letter-spacing:-0.035em;line-height:1.02}
+.hero .role{font-size:clamp(19px,1.8vw,23px);font-weight:600;color:var(--primary);margin:16px 0 20px}
+.hero .intro{font-size:18px;color:var(--ink-2);max-width:52ch;margin-bottom:32px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+.social{display:flex;gap:8px;margin-top:32px;align-items:center}
+.social a{width:42px;height:42px;border-radius:10px;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--ink-2);transition:border-color .2s var(--ease),color .2s var(--ease),transform .2s var(--ease)}
+.social a:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
+.social svg{width:19px;height:19px;fill:currentColor}
+.portrait{position:relative;justify-self:end;width:min(400px,100%)}
+.portrait::before{content:"";position:absolute;inset:28px -20px -20px 28px;background:var(--primary);border-radius:var(--r-lg)}
+.portrait::after{content:"";position:absolute;right:-36px;top:-6px;width:96px;height:96px;background-image:radial-gradient(var(--mint) 2px,transparent 2.5px);background-size:16px 16px;opacity:.9}
+.portrait .ph{position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 15%}
+.badge{position:absolute;left:-28px;bottom:36px;background:var(--white);border-radius:12px;padding:12px 16px;box-shadow:var(--shadow);display:flex;gap:12px;align-items:center;font-size:14px;line-height:1.35}
+.badge .ic{width:38px;height:38px;border-radius:10px;background:var(--rose-tint);display:grid;place-items:center}
+.badge .ic svg{width:20px;height:20px;fill:none;stroke:var(--rose);stroke-width:2}
+.badge b{display:block;font-size:15px}
+.badge span{color:var(--ink-3)}
+
+/* SECTIONS */
+.sec{padding:104px 0}
+.sec.alt{background:var(--bg-2)}
+.head{max-width:640px;margin-bottom:56px}
+.kicker{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--primary);margin-bottom:12px}
+.kicker::before{content:"";width:28px;height:2px;background:var(--primary)}
+.head h2{font-size:clamp(32px,3.8vw,44px)}
+.head p{color:var(--ink-2);margin-top:14px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:72px;align-items:start}
+.about-grid .lead{font-size:21px;line-height:1.55;color:var(--ink);font-weight:600;margin-bottom:20px;letter-spacing:-0.01em}
+.about-grid p.t{color:var(--ink-2)}
+.about-grid p.t + p.t{margin-top:16px}
+.values{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.values span{font-size:14px;font-weight:600;padding:8px 14px;border-radius:8px;background:var(--tint);color:var(--primary)}
+.edu{border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;background:var(--white)}
+.edu h3{font-size:14px;font-weight:600;color:var(--ink-3);margin-bottom:20px}
+.edu-item{display:flex;gap:16px}
+.edu-item .logo{width:52px;height:52px;border-radius:12px;background:var(--tint);display:grid;place-items:center;flex-shrink:0}
+.edu-item .logo svg{width:26px;height:26px;fill:none;stroke:var(--primary);stroke-width:1.8}
+.edu-item b{display:block;font-size:17px;line-height:1.35}
+.edu-item span{display:block;color:var(--ink-2);font-size:15px;margin-top:4px}
+.edu-meta{display:grid;grid-template-columns:1fr 1fr;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.edu-meta div + div{padding-left:20px;border-left:1px solid var(--line)}
+.edu-meta small{display:block;font-size:13px;color:var(--ink-3)}
+.edu-meta strong{font-size:22px;letter-spacing:-0.02em}
+.edu blockquote{margin-top:24px;padding:18px 20px;border-radius:12px;background:var(--rose-tint);font-size:16px;font-style:italic;color:var(--ink)}
+
+/* EXPERIENCE */
+.timeline{position:relative;display:grid;gap:20px}
+.job{display:grid;grid-template-columns:200px minmax(0,1fr);gap:32px;padding:32px;border-radius:var(--r-lg);background:var(--white);border:1px solid var(--line);transition:border-color .25s var(--ease),box-shadow .25s var(--ease)}
+.job:hover{border-color:var(--mint);box-shadow:var(--shadow)}
+.job .when{font-size:14px;font-weight:600;color:var(--ink-3)}
+.job .when b{display:block;font-size:16px;color:var(--primary);margin-bottom:4px}
+.job h3{font-size:22px;margin-bottom:6px}
+.job .org{color:var(--ink-2);font-weight:600;font-size:15px;margin-bottom:12px}
+.job p{color:var(--ink-2)}
+.job ul{margin-top:12px;padding-left:20px;color:var(--ink-2)}
+.job li + li{margin-top:4px}
+.job.featured{grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-color:var(--primary);background:linear-gradient(var(--white),var(--white)) padding-box}
+.job-fig{border-radius:12px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;background:var(--white)}
+.job-fig img{transition:transform .6s var(--ease)}
+.job-fig:hover img{transform:scale(1.03)}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.facts span{font-size:14px;padding:6px 12px;border-radius:8px;background:var(--bg-2);color:var(--ink-2)}
+.facts span b{color:var(--ink)}
+.mini-roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:20px}
+.mini{padding:24px;border-radius:var(--r);border:1px solid var(--line);background:var(--white)}
+.mini h4{font-size:17px;line-height:1.35;margin-bottom:6px}
+.mini p{font-size:15px;color:var(--ink-2)}
+
+/* SKILLS */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.skill{padding:32px;border-radius:var(--r-lg);background:var(--white);border:1px solid var(--line);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.skill:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.skill .ic{width:48px;height:48px;border-radius:12px;background:var(--primary);display:grid;place-items:center;margin-bottom:20px}
+.skill .ic svg{width:24px;height:24px;fill:none;stroke:var(--white);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.skill h3{font-size:20px;margin-bottom:8px}
+.skill p{color:var(--ink-2);font-size:16px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:32px}
+.tools b{font-size:15px;margin-right:6px}
+.tools span{font-size:15px;font-weight:600;padding:8px 16px;border-radius:8px;background:var(--white);border:1px solid var(--line)}
+
+/* PROJECTS */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.filters button{border:1.5px solid var(--line);background:var(--white);font-size:15px;font-weight:600;color:var(--ink-2);padding:8px 16px;border-radius:8px;transition:all .2s var(--ease)}
+.filters button:hover{border-color:var(--primary);color:var(--primary)}
+.filters button.on{background:var(--primary);border-color:var(--primary);color:var(--white)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.card{display:flex;flex-direction:column;text-align:left;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--white);overflow:hidden;padding:0;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease),opacity .3s var(--ease)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--mint)}
+.card.hide{display:none}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--bg-2);border-bottom:1px solid var(--line)}
+.card .thumb{padding:10px;background:var(--white)}
+.card .thumb img{width:100%;height:100%;object-fit:contain;object-position:center;transition:transform .6s var(--ease)}
+.card:hover .thumb img{transform:scale(1.04)}
+.card .body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+.card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.card .meta span{font-size:13px;font-weight:600;padding:4px 10px;border-radius:6px;background:var(--tint);color:var(--primary)}
+.card .meta span.y{background:var(--bg-2);color:var(--ink-2)}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{font-size:15px;color:var(--ink-2);flex:1}
+.card .more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:15px;font-weight:600;color:var(--primary)}
+.card .more svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;transition:transform .2s var(--ease)}
+.card:hover .more svg{transform:translateX(4px)}
+
+/* CONTACT */
+.contact{padding:0 0 104px}
+.cbox{position:relative;overflow:hidden;background:var(--primary);color:var(--white);border-radius:28px;padding:64px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:center}
+.cbox::after{content:"";position:absolute;left:-70px;bottom:-90px;width:260px;height:260px;background-image:radial-gradient(rgba(143,209,196,.5) 2px,transparent 2.5px);background-size:18px 18px}
+.cbox h2{font-size:clamp(30px,3.6vw,42px)}
+.cbox p{color:#cfe3e1;margin-top:14px;max-width:46ch}
+.clist{position:relative;z-index:1;display:grid;gap:12px}
+.clist a{display:flex;align-items:center;gap:14px;text-decoration:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 18px;transition:background-color .2s var(--ease),transform .2s var(--ease)}
+.clist a:hover{background:rgba(255,255,255,.16);transform:translateX(4px)}
+.clist .ic{width:40px;height:40px;border-radius:10px;background:var(--white);display:grid;place-items:center;flex-shrink:0}
+.clist .ic svg{width:19px;height:19px;fill:var(--primary);color:var(--primary)}
+.clist small{display:block;font-size:13px;color:#a9cbc7}
+.clist b{font-size:16px;word-break:break-word}
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(--ink-3)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* MODAL */
+dialog.modal{border:0;padding:0;margin:auto;width:min(980px,94vw);max-height:92vh;border-radius:var(--r-lg);background:var(--white);box-shadow:0 30px 80px -20px rgba(0,0,0,.45);overflow:hidden}
+dialog.modal::backdrop{background:var(--scrim)}
+dialog.modal[open]{animation:pop .35s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.m-in{max-height:92vh;overflow-y:auto;padding:36px}
+.m-close{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--white);display:grid;place-items:center;z-index:2}
+.m-close svg{width:18px;height:18px;stroke:var(--ink);stroke-width:2}
+.m-in .meta{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.m-in .meta span{font-size:13px;font-weight:600;padding:4px 10px;border-radius:6px;background:var(--tint);color:var(--primary)}
+.m-in h3{font-size:clamp(24px,3vw,32px);padding-right:48px}
+.m-in p{color:var(--ink-2);margin:12px 0 24px;max-width:70ch}
+.m-gal{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))}
+.m-gal figure{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--white)}
+.m-gal img{width:100%}
+.m-gal figcaption{font-size:14px;color:var(--ink-3);padding:10px 14px;border-top:1px solid var(--line)}
+.m-gal figure a{display:block;cursor:zoom-in}
+
+/* MOTION: subtle, one fade-up when content enters */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
+.js .rv.in{opacity:1;transform:none}
+.js .hero .rv{transition-duration:.9s}
+.fadeswap{transition:opacity .2s var(--ease)}
+body.swapping [data-i18n]{opacity:0}
+[data-i18n]{transition:opacity .2s var(--ease)}
+
+/* RESPONSIVE */
+@media (max-width:980px){
+  .hero-grid,.about-grid,.cbox,.job.featured{grid-template-columns:minmax(0,1fr)}
+  .hero{padding:48px 0 80px}
+  .portrait{justify-self:center;width:min(340px,82%);margin-top:16px}
+  .skills{grid-template-columns:minmax(0,1fr)}
+  .job{grid-template-columns:minmax(0,1fr);gap:12px}
+  .links{position:fixed;top:72px;left:0;right:0;background:var(--white);flex-direction:column;align-items:stretch;padding:12px 24px 24px;border-bottom:1px solid var(--line);display:none}
+  .links.open{display:flex}
+  .links a{padding:14px 12px}
+  .burger{display:grid}
+  .nav .btn.c{display:none}
+  .sec{padding:80px 0}
+  .cbox{padding:40px 28px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .brand small{display:none}
+  .grid,.mini-roles{grid-template-columns:minmax(0,1fr)}
+  .badge{left:-12px;bottom:20px}
+  .portrait::after{display:none}
+  .m-in{padding:28px 20px}
+  .wrap{width:calc(100% - 36px)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:1ms!important;transition-delay:0s!important}
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Eva Febriyani">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="11" fill="#0f4c55"/>
+        <path d="M9 11h9.5v3.4H12.8v3.8h5v3.4h-5v4h5.9V29H9z" fill="#fff"/>
+        <path d="M22 11h9.5v3.4h-5.7v3.8h5v3.4h-5V29H22z" fill="#8fd1c4"/>
+        <rect x="9" y="31.6" width="22.5" height="1.6" rx=".8" fill="#8fd1c4" opacity=".55"/>
+      </svg>
+      <span><b>Eva Febriyani</b><small data-i18n="brandSub">Geospatial Data Analyst</small></span>
+    </a>
+    <ul class="links" id="links">
+      <li><a href="#tentang" data-i18n="nAbout">Tentang</a></li>
+      <li><a href="#pengalaman" data-i18n="nExp">Pengalaman</a></li>
+      <li><a href="#keahlian" data-i18n="nSkills">Keahlian</a></li>
+      <li><a href="#proyek" data-i18n="nWork">Proyek</a></li>
+    </ul>
+    <div class="right">
+      <button class="lang-btn" id="lang" aria-label="Switch to English"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span id="langLabel">EN</span></button>
+      <a class="btn btn-primary c" href="#kontak" data-i18n="nContact">Hubungi Saya</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="status rv"><i></i><span data-i18n="status">Terbuka untuk kesempatan kerja</span></p>
+      <h1 class="rv" style="--i:1">Eva Febriyani</h1>
+      <p class="role rv" style="--i:2" data-i18n="role">Geospatial Data Analyst &amp; Remote Sensing</p>
+      <p class="intro rv" style="--i:3" data-i18n="intro">Lulusan Kartografi dan Penginderaan Jauh UGM yang mengolah citra satelit, foto udara, dan data lapangan menjadi peta serta analisis spasial yang siap dipakai.</p>
+      <div class="actions rv" style="--i:4">
+        <a class="btn btn-primary" href="#proyek"><span data-i18n="ctaWork">Lihat Proyek</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="mailto:evaafebry13@gmail.com" data-i18n="ctaMail">Kirim Email</a>
+      </div>
+      <div class="social rv" style="--i:5">
+        <a href="https://www.linkedin.com/in/evafebriyani" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11.02 5 2.5 2.5 0 01-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+        <a href="https://www.instagram.com/evaafebry" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="mailto:evaafebry13@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.4 7H4v.6l8 5.4 8-5.4V7h-.4z"/></svg></a>
+      </div>
+    </div>
+    <div class="portrait rv" style="--i:2">
+      <div class="ph"><img src="img/eva.jpg" alt="Eva Febriyani" width="620" height="936"></div>
+      <div class="badge"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span><div><b>Universitas Gadjah Mada</b><span data-i18n="badge">S-1 Kartografi dan Penginderaan Jauh</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="tentang">
+  <div class="wrap about-grid">
+    <div>
+      <div class="head rv" style="margin-bottom:24px"><p class="kicker" data-i18n="kAbout">Tentang Saya</p><h2 data-i18n="aboutH">Analytical Mind, Proactive Attitude, Meaningful Impact</h2></div>
+      <p class="lead rv" data-i18n="aboutLead">Saya menggabungkan ketelitian analitis, rasa ingin tahu, dan inisiatif untuk mengubah data menjadi solusi.</p>
+      <p class="t rv" data-i18n="about1">Saya lulusan Program Studi S-1 Kartografi dan Penginderaan Jauh, Fakultas Geografi, Universitas Gadjah Mada. Berbekal pengalaman dalam analisis SIG, pemetaan, serta kepemimpinan organisasi, saya terbiasa bekerja secara terstruktur, berkolaborasi lintas tim, dan beradaptasi dengan tantangan baru.</p>
+      <p class="t rv" data-i18n="about2">Saya siap membawa perspektif geospasial, semangat belajar, dan orientasi pada hasil untuk menciptakan kontribusi nyata bagi perusahaan.</p>
+      <div class="values rv"><span data-i18n="v1">Analisis Terstruktur</span><span data-i18n="v2">Kolaborasi Lintas Tim</span><span data-i18n="v3">Cepat Beradaptasi</span></div>
+    </div>
+    <aside class="edu rv" style="--i:2">
+      <h3 data-i18n="eduH">Pendidikan</h3>
+      <div class="edu-item">
+        <span class="logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span>
+        <div><b data-i18n="eduProg">S-1 Kartografi dan Penginderaan Jauh</b><span data-i18n="eduUni">Fakultas Geografi, Universitas Gadjah Mada</span></div>
+      </div>
+      <div class="edu-meta">
+        <div><small data-i18n="eduYearL">Periode</small><strong>2022 – 2026</strong></div>
+        <div><small data-i18n="eduGpaL">IPK</small><strong data-i18n="gpaV">3,59 / 4,00</strong></div>
+      </div>
+      <blockquote data-i18n="quote">“Dari data spasial menuju pemanfaatan sumber daya yang berkelanjutan.”</blockquote>
+    </aside>
+  </div>
+</section>
+
+<section class="sec" id="pengalaman">
+  <div class="wrap">
+    <div class="head rv"><p class="kicker" data-i18n="kExp">Pengalaman</p><h2 data-i18n="expH">Pengalaman Kerja dan Organisasi</h2></div>
+    <div class="timeline">
+      <article class="job featured rv">
+        <div>
+          <div class="when"><b data-i18n="j1when">Magang</b>Dinas PUP-ESDM DIY</div>
+          <h3 style="margin-top:12px" data-i18n="j1h">GIS Analyst Intern</h3>
+          <p class="org" data-i18n="j1org">Pemetaan Wilayah Pertambangan DIY 2026</p>
+          <p data-i18n="j1p">Menyusun peta sebaran WUP, WPR, dan WPN berdasarkan Kepmen ESDM 59.K/MB.01/MEM.B/2026 menggunakan ArcGIS dan QGIS.</p>
+          <ul>
+            <li data-i18n="j1l1">Memvalidasi lebih dari 500 data spasial</li>
+            <li data-i18n="j1l2">Mendigitasi lebih dari 150 fitur batas tambang</li>
+            <li data-i18n="j1l3">Menghasilkan 10 peta tematik</li>
+          </ul>
+          <div class="facts">
+            <span data-i18n="f1"><b>42.942 ha</b> total Wilayah Pertambangan</span>
+            <span data-i18n="f2"><b>13,48%</b> dari luas daratan DIY</span>
+          </div>
+        </div>
+        <button class="job-fig zoomable" data-cap="Peta Wilayah Pertambangan DIY 2026" aria-label="Perbesar peta"><img src="img/esdm-wp-diy.jpg" alt="Peta Wilayah Pertambangan DIY Tahun 2026" loading="lazy"></button>
+      </article>
+      <article class="job rv">
+        <div class="when"><b data-i18n="j2when">Asisten Praktikum</b>Fakultas Geografi UGM</div>
+        <div><h3 data-i18n="j2h">Asisten Praktikum Laboratorium SIG</h3><p data-i18n="j2p">Mendampingi lebih dari 30 mahasiswa setiap semester dalam praktikum Sistem Informasi Geografis.</p></div>
+      </article>
+      <div class="mini-roles">
+        <div class="mini rv"><h4 data-i18n="o1h">Ketua Departemen Sosial Masyarakat, BEM Fakultas</h4><p data-i18n="o1p">Memimpin program Donor Darah, Qurban with Geography, Desa Binaan, dan kegiatan sosial masyarakat lainnya.</p></div>
+        <div class="mini rv" style="--i:1"><h4 data-i18n="o2h">Koordinator Divisi Humas, Pionir Geospace UGM</h4><p data-i18n="o2p">Lebih dari 30 konten kreatif; engagement media sosial naik 30%.</p></div>
+        <div class="mini rv"><h4 data-i18n="o3h">Staf Departemen Sosial Masyarakat, HMSaIG</h4><p data-i18n="o3p">Penanaman mangrove bersama lebih dari 50 relawan dan workshop untuk lebih dari 15 petani di Desa Ngadirejo, Kaligesing, Purworejo.</p></div>
+        <div class="mini rv" style="--i:1"><h4 data-i18n="o4h">Kuliah Kerja Lapangan</h4><p data-i18n="o4p">Akuisisi data lapangan di Kebumen (2024) dan Bali (2025), termasuk fotogrametri UAV dan LiDAR.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="keahlian">
+  <div class="wrap">
+    <div class="head rv"><p class="kicker" data-i18n="kSkills">Keahlian</p><h2 data-i18n="skillsH">Keahlian Geospasial</h2></div>
+    <div class="skills">
+      <div class="skill rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l3 3-3 3-3-3z"/><path d="M4 11h4M16 11h4M12 13v8M8 21h8"/></svg></div><h3 data-i18n="s1h">Akuisisi Data</h3><p data-i18n="s1p">Fotogrametri UAV dan LiDAR, dengan praktik lapangan di Kebumen dan Bali.</p></div>
+      <div class="skill rv" style="--i:1"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg></div><h3 data-i18n="s2h">Analisis SIG</h3><p data-i18n="s2p">Georeferensi, digitasi, validasi data spasial, analisis jaringan dan overlay, hingga produksi peta tematik.</p></div>
+      <div class="skill rv" style="--i:2"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M3 12h6M15 12h6M12 3v6M12 15v6"/></svg></div><h3 data-i18n="s3h">Penginderaan Jauh</h3><p data-i18n="s3p">Interpretasi citra satelit optik dan radar, serta pengolahan data di Google Earth Engine.</p></div>
+    </div>
+    <div class="tools rv"><b data-i18n="toolsL">Tools:</b><span>QGIS</span><span>ArcGIS Pro</span><span>ENVI</span><span>SNAP</span><span>Global Mapper</span><span>Google Earth Engine</span></div>
+  </div>
+</section>
+
+<section class="sec" id="proyek">
+  <div class="wrap">
+    <div class="head rv"><p class="kicker" data-i18n="kWork">Proyek</p><h2 data-i18n="workH">Proyek Pilihan</h2><p data-i18n="workP">Klik proyek untuk melihat peta dan detailnya.</p></div>
+    <div class="filters rv" id="filters">
+      <button class="on" data-f="all" data-i18n="fAll">Semua</button>
+      <button data-f="field" data-i18n="fField">Kerja Lapangan</button>
+      <button data-f="rs" data-i18n="fRs">Penginderaan Jauh</button>
+      <button data-f="carto" data-i18n="fCarto">Kartografi</button>
+      <button data-f="web">WebGIS</button>
+    </div>
+    <div class="grid" id="grid">
+      <button class="card rv" data-p="gombong" data-c="field">
+        <div class="thumb"><img src="img/gombong-kemiskinan.jpg" alt="" loading="lazy"></div>
+        <div class="body"><div class="meta"><span data-i18n="p1t">KKL II, Kebumen</span><span class="y">2024</span></div><h3 data-i18n="p1h">Pemetaan Sosial Ekonomi Kelurahan Gombong</h3><p data-i18n="p1s">Peta kelas permukiman dan status kemiskinan rumah tangga per RW, skala 1:5.000.</p><span class="more"><span data-i18n="more">Lihat detail</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </button>
+      <button class="card rv" style="--i:1" data-p="jembrana" data-c="field rs">
+        <div class="thumb"><img src="img/jembrana-karbon.jpg" alt="" loading="lazy"></div>
+        <div class="body"><div class="meta"><span data-i18n="p2t">KKL III, Bali</span><span class="y">2025</span></div><h3 data-i18n="p2h">Kajian Perkotaan dan Stok Karbon Kecamatan Jembrana</h3><p data-i18n="p2s">Sebaran stok karbon RTH tegakan dari citra PlanetScope.</p><span class="more"><span data-i18n="more">Lihat detail</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </button>
+      <button class="card rv" data-p="boyong" data-c="field rs">
+        <div class="thumb"><img src="img/boyong-ortofoto.jpg" alt="" loading="lazy"></div>
+        <div class="body"><div class="meta"><span data-i18n="p3t">Fotogrametri UAV</span><span class="y">2023</span></div><h3 data-i18n="p3h">Model Permukaan dan Ortofoto Kali Boyong</h3><p data-i18n="p3s">DSM dan mosaik ortofoto dengan galat titik kontrol sekitar 0,003 m.</p><span class="more"><span data-i18n="more">Lihat detail</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </button>
+      <button class="card rv" style="--i:1" data-p="hokkaido" data-c="rs">
+        <div class="thumb"><img src="img/hokkaido-deformasi.jpg" alt="" loading="lazy"></div>
+        <div class="body"><div class="meta"><span data-i18n="p5t">Penginderaan Jauh Radar</span><span class="y">2024</span></div><h3 data-i18n="p5h">Deformasi Lahan Hokkaido dengan Sentinel-1A</h3><p data-i18n="p5s">Peta deformasi lahan dari dua citra Sentinel-1A, skala 1:900.000.</p><span class="more"><span data-i18n="more">Lihat detail</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </button>
+      <button class="card rv" data-p="tematik" data-c="carto">
+        <div class="thumb"><img src="img/lereng-bogor.jpg" alt="" loading="lazy"></div>
+        <div class="body"><div class="meta"><span data-i18n="p4t">Kartografi</span></div><h3 data-i18n="p4h">Ragam Peta Tematik</h3><p data-i18n="p4s">Peta rupabumi, kepadatan penduduk, kemiringan lereng, dan jaringan jalan.</p><span class="more"><span data-i18n="more">Lihat detail</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </button>
+      <button class="card rv" style="--i:1" data-p="webgis" data-c="web">
+        <div class="thumb"><img src="img/webgis-peta.jpg" alt="" loading="lazy"></div>
+        <div class="body"><div class="meta"><span>WebGIS</span></div><h3 data-i18n="p6h">WebGIS Wisata Yogyakarta</h3><p data-i18n="p6s">Peta interaktif lokasi wisata dan halaman admin pengelola data.</p><span class="more"><span data-i18n="more">Lihat detail</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontak">
+  <div class="wrap">
+    <div class="cbox rv">
+      <div><h2 data-i18n="cH">Mari Bekerja Sama</h2><p data-i18n="cP">Saya terbuka untuk peran di bidang GIS, penginderaan jauh, dan kartografi. Silakan hubungi saya untuk pertanyaan maupun kolaborasi.</p></div>
+      <div class="clist">
+        <a href="mailto:evaafebry13@gmail.com"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.4 7H4v.6l8 5.4 8-5.4V7h-.4z"/></svg></span><span><small>Email</small><b>evaafebry13@gmail.com</b></span></a>
+        <a href="https://www.linkedin.com/in/evafebriyani" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11.02 5 2.5 2.5 0 01-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></span><span><small>LinkedIn</small><b>linkedin.com/in/evafebriyani</b></span></a>
+        <a href="https://www.instagram.com/evaafebry" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span><span><small>Instagram</small><b>@evaafebry</b></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr">2026</span> Eva Febriyani</span><span data-i18n="foot">Terima kasih telah mengunjungi portofolio saya.</span></div></footer>
+
+<dialog class="modal" id="modal" aria-labelledby="mTitle">
+  <button class="m-close" id="mClose" aria-label="Tutup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="m-in" id="mBody"></div>
+</dialog>
+
+<script>
+(()=>{
+const T={
+ id:{},
+ en:{brandSub:"Geospatial Data Analyst",nAbout:"About",nExp:"Experience",nSkills:"Skills",nWork:"Projects",nContact:"Contact Me",
+  status:"Open to work",role:"Geospatial Data Analyst &amp; Remote Sensing",
+  intro:"Cartography and Remote Sensing graduate from Universitas Gadjah Mada who turns satellite imagery, aerial photos and field data into maps and spatial analysis that are ready to use.",
+  ctaWork:"View Projects",ctaMail:"Send an Email",badge:"BSc in Cartography and Remote Sensing",
+  kAbout:"About Me",aboutH:"Analytical Mind, Proactive Attitude, Meaningful Impact",
+  aboutLead:"I combine analytical rigour, curiosity and initiative to turn data into solutions.",
+  about1:"I graduated from the Cartography and Remote Sensing undergraduate program, Faculty of Geography, Universitas Gadjah Mada. With experience in GIS analysis, mapping and student leadership, I am used to working in a structured way, collaborating across teams and adapting to new challenges.",
+  about2:"I am ready to bring a geospatial perspective, eagerness to learn and a results-driven mindset to make a real contribution to your company.",
+  v1:"Structured Analysis",v2:"Cross-Team Collaboration",v3:"Quick to Adapt",
+  eduH:"Education",eduProg:"BSc in Cartography and Remote Sensing",eduUni:"Faculty of Geography, Universitas Gadjah Mada",eduYearL:"Period",eduGpaL:"GPA",gpaV:"3.59 / 4.00",
+  quote:"“From spatial data to the sustainable use of natural resources.”",
+  kExp:"Experience",expH:"Work and Leadership Experience",
+  j1when:"Internship",j1h:"GIS Analyst Intern",j1org:"Yogyakarta Mining Area Mapping 2026",
+  j1p:"Produced maps of WUP, WPR and WPN mining zones based on Ministerial Decree 59.K/MB.01/MEM.B/2026 using ArcGIS and QGIS.",
+  j1l1:"Validated more than 500 spatial records",j1l2:"Digitised more than 150 mine boundary features",j1l3:"Produced 10 thematic maps",
+  f1:"<b>42,942 ha</b> total mining area",f2:"<b>13.48%</b> of Yogyakarta’s land area",
+  j2when:"Teaching Assistant",j2h:"GIS Laboratory Teaching Assistant",j2p:"Supported more than 30 students every semester in Geographic Information Systems lab classes.",
+  o1h:"Head of Social Affairs, Faculty Student Executive Board",o1p:"Led the Blood Drive, Qurban with Geography and Partner Village programmes, among other community activities.",
+  o2h:"Public Relations Coordinator, Pionir Geospace UGM",o2p:"Produced over 30 pieces of creative content; social media engagement grew by 30%.",
+  o3h:"Social Affairs Staff, HMSaIG",o3p:"Mangrove planting with over 50 volunteers and a workshop for more than 15 farmers in Ngadirejo Village, Kaligesing, Purworejo.",
+  o4h:"Field Courses",o4p:"Field data acquisition in Kebumen (2024) and Bali (2025), including UAV photogrammetry and LiDAR.",
+  kSkills:"Skills",skillsH:"Geospatial Skills",
+  s1h:"Data Acquisition",s1p:"UAV photogrammetry and LiDAR, with fieldwork in Kebumen and Bali.",
+  s2h:"GIS Analysis",s2p:"Georeferencing, digitising, spatial data validation, network and overlay analysis, through to thematic map production.",
+  s3h:"Remote Sensing",s3p:"Interpreting optical and radar satellite imagery, and processing data in Google Earth Engine.",toolsL:"Tools:",
+  kWork:"Projects",workH:"Selected Projects",workP:"Click a project to see its maps and details.",
+  fAll:"All",fField:"Fieldwork",fRs:"Remote Sensing",fCarto:"Cartography",more:"View details",
+  p1t:"Field Course II, Kebumen",p1h:"Socio-Economic Mapping of Gombong Village",p1s:"Settlement classes and household poverty status per neighbourhood unit, at 1:5,000.",
+  p2t:"Field Course III, Bali",p2h:"Urban Study and Carbon Stock of Jembrana District",p2s:"Carbon stock of tree-covered green space from PlanetScope imagery.",
+  p3t:"UAV Photogrammetry",p3h:"Surface Model and Orthophoto of Kali Boyong",p3s:"DSM and orthophoto mosaic with a control point error of about 0.003 m.",
+  p5t:"Radar Remote Sensing",p5h:"Land Deformation in Hokkaido with Sentinel-1A",p5s:"Land deformation map from two Sentinel-1A scenes, at 1:900,000.",
+  p4t:"Cartography",p4h:"A Range of Thematic Maps",p4s:"Topographic, population density, slope and road network maps.",
+  p6h:"Yogyakarta Tourism WebGIS",p6s:"An interactive map of tourist sites with an admin page for the data.",
+  cH:"Let’s Work Together",cP:"I am open to roles in GIS, remote sensing and cartography. Feel free to reach out with questions or collaboration ideas.",
+  foot:"Thank you for visiting my portfolio."}
+};
+const P={
+ gombong:{tags:{id:["KKL II, Kebumen","2024"],en:["Field Course II, Kebumen","2024"]},
+  t:{id:"Pemetaan Sosial Ekonomi Kelurahan Gombong",en:"Socio-Economic Mapping of Gombong Village"},
+  d:{id:"Akuisisi data geospasial untuk mendukung agribisnis di Kabupaten Kebumen. Dua peta skala 1:5.000 memetakan kelas permukiman dan status kemiskinan rumah tangga per RW.",en:"Geospatial data acquisition to support agribusiness in Kebumen Regency. Two 1:5,000 maps show settlement classes and household poverty status per neighbourhood unit (RW)."},
+  g:[["gombong-permukiman.jpg","Klasifikasi kelas permukiman: 4 kelas kepadatan dan keteraturan","Settlement classes: 4 classes of density and regularity"],["gombong-kemiskinan.jpg","Status kemiskinan rumah tangga per RW","Household poverty status per RW"]]},
+ jembrana:{tags:{id:["KKL III, Bali","2025"],en:["Field Course III, Bali","2025"]},
+  t:{id:"Kajian Perkotaan dan Stok Karbon Kecamatan Jembrana",en:"Urban Study and Carbon Stock of Jembrana District"},
+  d:{id:"Analisis citra PlanetScope (Mei 2025) untuk memetakan sebaran stok karbon pada Ruang Terbuka Hijau tegakan di Kecamatan Jembrana, dari kelas sangat rendah hingga sangat tinggi.",en:"PlanetScope imagery (May 2025) analysed to map carbon stock across tree-covered green open space in Jembrana District, from very low to very high."},
+  g:[["jembrana-kajian.jpg","Peta wilayah kajian, skala 1:50.000","Study area, scale 1:50,000"],["jembrana-karbon.jpg","Sebaran stok karbon pada RTH tegakan, skala 1:100.000","Carbon stock in tree-covered green space, scale 1:100,000"]]},
+ boyong:{tags:{id:["Fotogrametri UAV","2023"],en:["UAV Photogrammetry","2023"]},
+  t:{id:"Model Permukaan dan Ortofoto Kali Boyong",en:"Surface Model and Orthophoto of Kali Boyong"},
+  d:{id:"Pengolahan foto udara menjadi Digital Surface Model dan mosaik ortofoto wilayah Kali Boyong, Yogyakarta. Galat titik kontrol pada pengolahan hanya sekitar 0,003 m.",en:"Aerial photos processed into a Digital Surface Model and an orthophoto mosaic of Kali Boyong, Yogyakarta, with a control point error of only about 0.003 m."},
+  g:[["boyong-dsm.jpg","Digital Surface Model, skala 1:5.000","Digital Surface Model, scale 1:5,000"],["boyong-ortofoto.jpg","Mosaik ortofoto, skala 1:4.500","Orthophoto mosaic, scale 1:4,500"]]},
+ hokkaido:{tags:{id:["Penginderaan Jauh Radar","2024"],en:["Radar Remote Sensing","2024"]},
+  t:{id:"Deformasi Lahan Hokkaido dengan Sentinel-1A",en:"Land Deformation in Hokkaido with Sentinel-1A"},
+  d:{id:"Proyek kelompok yang mengolah dua citra Sentinel-1A (5 dan 17 September 2018) menjadi peta deformasi lahan sebagian wilayah Hokkaido, skala 1:900.000.",en:"A group project that processed two Sentinel-1A scenes (5 and 17 September 2018) into a land deformation map of part of Hokkaido at 1:900,000."},
+  g:[["hokkaido-deformasi.jpg","Peta deformasi lahan citra Sentinel-1A","Land deformation map from Sentinel-1A imagery"]]},
+ tematik:{tags:{id:["Kartografi dan Analisis Spasial"],en:["Cartography and Spatial Analysis"]},
+  t:{id:"Ragam Peta Tematik",en:"A Range of Thematic Maps"},
+  d:{id:"Dari peta dasar hingga analisis spasial: peta rupabumi, klasifikasi data statistik, overlay kemiringan lereng dengan penggunaan lahan, dan analisis jaringan jalan.",en:"From base maps to spatial analysis: topographic maps, statistical classification, slope and land use overlay, and road network analysis."},
+  g:[["rupabumi-temanggung.jpg","Rupabumi digital 1:25.000, Kabupaten Temanggung","Digital topographic map 1:25,000, Temanggung Regency"],["kepadatan-2019.jpg","Kepadatan penduduk 2019, interval kuantil","Population density 2019, quantile classes"],["lereng-bogor.jpg","Kemiringan lereng dan penggunaan lahan, Kota Bogor","Slope and land use, Bogor City"],["jalan-ugm.jpg","Jaringan jalan kampus UGM, arah dan junction","UGM campus road network, direction and junctions"]]},
+ webgis:{tags:{id:["WebGIS"],en:["WebGIS"]},
+  t:{id:"WebGIS Wisata Yogyakarta",en:"Yogyakarta Tourism WebGIS"},
+  d:{id:"Aplikasi web pemetaan lokasi wisata di Yogyakarta: peta interaktif berbasis Google Maps untuk pengunjung, serta halaman admin untuk mengelola nama, alamat, harga tiket, dan koordinat.",en:"A web app mapping tourist sites in Yogyakarta: an interactive Google Maps view for visitors and an admin page to manage names, addresses, ticket prices and coordinates."},
+  g:[["webgis-peta.jpg","Peta lokasi wisata untuk pengunjung","Tourist site map for visitors"],["webgis-admin.jpg","Dashboard admin data wisata","Admin dashboard for site data"]]}
+};
+const nodes=[...document.querySelectorAll('[data-i18n]')];
+nodes.forEach(n=>T.id[n.dataset.i18n]=n.innerHTML);
+let lang='id';
+const langBtn=document.getElementById('lang'),langLabel=document.getElementById('langLabel');
+function apply(l){
+  lang=l;nodes.forEach(n=>{const v=T[l][n.dataset.i18n];if(v!==undefined)n.innerHTML=v});
+  document.documentElement.lang=l;langLabel.textContent=l==='id'?'EN':'ID';
+  langBtn.setAttribute('aria-label',l==='id'?'Switch to English':'Ganti ke Bahasa Indonesia');
+  document.title=l==='id'?'Eva Febriyani | Analis Data Geospasial':'Eva Febriyani | Geospatial Data Analyst';
+  if(modal.open&&current)fill(current);
+}
+langBtn.addEventListener('click',()=>{document.body.classList.add('swapping');setTimeout(()=>{apply(lang==='id'?'en':'id');document.body.classList.remove('swapping');try{localStorage.setItem('lang',lang)}catch(e){}},200)});
+
+// nav
+const nav=document.getElementById('nav'),links=document.getElementById('links'),burger=document.getElementById('burger');
+addEventListener('scroll',()=>nav.classList.toggle('line',scrollY>10),{passive:true});
+burger.onclick=()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');burger.setAttribute('aria-expanded',false)}));
+const navA=[...links.querySelectorAll('a')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navA.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+['tentang','pengalaman','keahlian','proyek'].forEach(id=>so.observe(document.getElementById(id)));
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// filters
+document.querySelectorAll('#filters button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on',x===b));
+  const f=b.dataset.f;document.querySelectorAll('#grid .card').forEach(c=>{const s=f==='all'||c.dataset.c.split(' ').includes(f);c.classList.toggle('hide',!s);if(s)c.classList.add('in')});
+}));
+
+// modal
+const modal=document.getElementById('modal'),mBody=document.getElementById('mBody');let current=null;
+function fill(k){const p=P[k];
+  mBody.innerHTML=`<div class="meta">${p.tags[lang].map(t=>`<span>${t}</span>`).join('')}</div><h3 id="mTitle">${p.t[lang]}</h3><p>${p.d[lang]}</p><div class="m-gal">${p.g.map(g=>`<figure><a href="img/${g[0]}" target="_blank" rel="noopener"><img src="img/${g[0]}" alt="${lang==='id'?g[1]:g[2]}"></a><figcaption>${lang==='id'?g[1]:g[2]}</figcaption></figure>`).join('')}</div>`}
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>{current=c.dataset.p;fill(current);modal.showModal();mBody.scrollTop=0}));
+document.querySelectorAll('.zoomable').forEach(z=>z.addEventListener('click',()=>{current=null;const im=z.querySelector('img');mBody.innerHTML=`<h3 id="mTitle">${z.dataset.cap}</h3><div class="m-gal" style="margin-top:20px"><figure><img src="${im.src}" alt="${im.alt}"></figure></div>`;modal.showModal()}));
+document.getElementById('mClose').onclick=()=>modal.close();
+modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});
+
+// initial language
+let start='id';try{start=localStorage.getItem('lang')||((navigator.language||'id').toLowerCase().startsWith('id')?'id':'en')}catch(e){}
+if(start==='en')apply('en');
+})();
+</script>
+</body>
+</html>
